@@ -1,0 +1,18 @@
+﻿<Window x:Class="MyAffairs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyAffairs"
+        mc:Ignorable="d"
+        Title="MA" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="dgMA" FontSize="16" AutoGenerateColumns="False" FontWeight="Bold" GridLinesVisibility="All" Opacity="0.9" HorizontalGridLinesBrush="#FFC1ADAD" VerticalGridLinesBrush="#FFC1ADAD" BorderBrush="#FFDBDCD9">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Binding="{Binding Path = CreateTime}" IsReadOnly="True" Header="CreationDate" Width="195" Foreground="#FF809155" FontFamily="Segoe UI Semibold"/>
+                <DataGridCheckBoxColumn  Binding="{Binding Path = IsCompleted, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" Header="Completed" Width="93"/>
+                <DataGridTextColumn FontWeight="DemiBold" Binding="{Binding Path = MyTask}" IsReadOnly="False" Header="Affairs" Width="*" FontFamily="Yu Gothic UI Semibold"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
